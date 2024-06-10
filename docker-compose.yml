@@ -31,6 +31,45 @@ services:
     networks:
       - internal
 
+  teamcity-agent-1:
+    container_name: teamcity-agent-1-tc
+    image: jetbrains/teamcity-agent:${TEAMCITY_VERSION}-linux-sudo
+    privileged: true
+    volumes:
+      - ./volumes/data/teamcity_agent/conf/agent1:/data/teamcity_agent/conf
+    environment:
+      - DOCKER_IN_DOCKER=start
+    depends_on:
+      - teamcity
+    networks:
+      - internal
+
+  teamcity-agent-2:
+    container_name: teamcity-agent-2-tc
+    image: jetbrains/teamcity-agent:${TEAMCITY_VERSION}-linux-sudo
+    privileged: true
+    volumes:
+      - ./volumes/data/teamcity_agent/conf/agent2:/data/teamcity_agent/conf
+    environment:
+      - DOCKER_IN_DOCKER=start
+    depends_on:
+      - teamcity
+    networks:
+      - internal
+
+  teamcity-agent-3:
+    container_name: teamcity-agent-3-tc
+    image: jetbrains/teamcity-agent:${TEAMCITY_VERSION}-linux-sudo
+    privileged: true
+    volumes:
+      - ./volumes/data/teamcity_agent/conf/agent3:/data/teamcity_agent/conf
+    environment:
+      - DOCKER_IN_DOCKER=start
+    depends_on:
+      - teamcity
+    networks:
+      - internal
+
 volumes:
 
   mysql_db:
