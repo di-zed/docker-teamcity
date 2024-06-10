@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+
+  mysql:
+    container_name: mysql-tc
+    image: mysql:8.4.0
+    hostname: docker-mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_db:/var/lib/mysql:delegated
+      - ./volumes/etc/mysql/conf.d:/etc/mysql/conf.d:cached
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_USER: ${MYSQL_ROOT_USER}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      - internal
+
+  teamcity:
+    container_name: teamcity-tc
+    image: jetbrains/teamcity-server:${TEAMCITY_VERSION}
+    ports:
+      - "8111:8111"
+    volumes:
+      - ./volumes/data/teamcity_server/datadir:/data/teamcity_server/datadir
+      - ./volumes/opt/teamcity/logs:/opt/teamcity/logs
+    depends_on:
+      - mysql
+    networks:
+      - internal
+
+volumes:
+
+  mysql_db:
+    driver: local
+    driver_opts:
+      type: none
+      device: $PWD/volumes/var/lib/mysql
+      o: bind
+
+networks:
+
+  internal:
+    driver: bridge

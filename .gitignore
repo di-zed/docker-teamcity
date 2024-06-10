@@ -1,0 +1,5 @@
+.env
+volumes/data/teamcity_server/datadir/*
+volumes/opt/teamcity/logs/*
+volumes/var/lib/mysql/*
+!.gitkeep
