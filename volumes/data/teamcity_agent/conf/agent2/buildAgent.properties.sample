@@ -1,4 +1,4 @@
-name=Agent 1
+name=Agent 2
 ownPort=9090
 serverUrl=http\://teamcity\:8111
 
@@ -8,5 +8,4 @@ systemDir=../system
 
 teamcity.docker.use.sudo=true
 
-
-authorizationToken=dfce6caa263a50f3837c7aad82d92478
+authorizationToken=

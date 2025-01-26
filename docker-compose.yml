@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.9'
 
 services:
 
@@ -7,7 +7,7 @@ services:
     image: mysql:8.4.0
     hostname: docker-mysql
     ports:
-      - "3306:3306"
+      - "${MYSQL_HOST_PORT}:${MYSQL_CONTAINER_PORT}"
     volumes:
       - mysql_db:/var/lib/mysql:delegated
       - ./volumes/etc/mysql/conf.d:/etc/mysql/conf.d:cached
@@ -22,7 +22,7 @@ services:
     container_name: teamcity-tc
     image: jetbrains/teamcity-server:${TEAMCITY_VERSION}
     ports:
-      - "8111:8111"
+      - "${TEAMCITY_HOST_PORT}:${TEAMCITY_CONTAINER_PORT}"
     volumes:
       - ./volumes/data/teamcity_server/datadir:/data/teamcity_server/datadir
       - ./volumes/opt/teamcity/logs:/opt/teamcity/logs
