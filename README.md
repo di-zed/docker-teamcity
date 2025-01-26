@@ -69,23 +69,23 @@ make docker-local-restart
 - User: {see .env file}
 - Password: {see .env file}
 
-### TeamCity Server (2024.03.1)
+### TeamCity Server (2024.12.1)
 
 - Host: teamcity
 - Port: 8111
 - URL: http://localhost:8111/
 
-### TeamCity Agent 1 (2024.03.1)
+### TeamCity Agent 1 (2024.12.1)
 
 - Host: teamcity-agent-1
 - Config file: *./volumes/data/teamcity_agent/conf/agent1/buildAgent.properties*
 
-### TeamCity Agent 2 (2024.03.1)
+### TeamCity Agent 2 (2024.12.1)
 
 - Host: teamcity-agent-2
 - Config file: *./volumes/data/teamcity_agent/conf/agent2/buildAgent.properties*
 
-### TeamCity Agent 3 (2024.03.1)
+### TeamCity Agent 3 (2024.12.1)
 
 - Host: teamcity-agent-3
 - Config file: *./volumes/data/teamcity_agent/conf/agent3/buildAgent.properties*
