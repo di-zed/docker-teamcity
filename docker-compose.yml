@@ -26,6 +26,7 @@ services:
     volumes:
       - ./volumes/data/teamcity_server/datadir:/data/teamcity_server/datadir
       - ./volumes/opt/teamcity/logs:/opt/teamcity/logs
+      - ./volumes/root/.ssh:/root/.ssh
     depends_on:
       - mysql
     networks:
@@ -33,10 +34,14 @@ services:
 
   teamcity-agent-1:
     container_name: teamcity-agent-1-tc
-    image: jetbrains/teamcity-agent:${TEAMCITY_VERSION}-linux-sudo
+    build:
+      context: ./images/teamcity_agent
+      args:
+        TEAMCITY_VERSION: ${TEAMCITY_VERSION}
     privileged: true
     volumes:
       - ./volumes/data/teamcity_agent/conf/agent1:/data/teamcity_agent/conf
+      - ./volumes/root/.ssh:/root/.ssh
     environment:
       - DOCKER_IN_DOCKER=start
     depends_on:
@@ -46,10 +51,14 @@ services:
 
   teamcity-agent-2:
     container_name: teamcity-agent-2-tc
-    image: jetbrains/teamcity-agent:${TEAMCITY_VERSION}-linux-sudo
+    build:
+      context: ./images/teamcity_agent
+      args:
+        TEAMCITY_VERSION: ${TEAMCITY_VERSION}
     privileged: true
     volumes:
       - ./volumes/data/teamcity_agent/conf/agent2:/data/teamcity_agent/conf
+      - ./volumes/root/.ssh:/root/.ssh
     environment:
       - DOCKER_IN_DOCKER=start
     depends_on:
@@ -59,10 +68,14 @@ services:
 
   teamcity-agent-3:
     container_name: teamcity-agent-3-tc
-    image: jetbrains/teamcity-agent:${TEAMCITY_VERSION}-linux-sudo
+    build:
+      context: ./images/teamcity_agent
+      args:
+        TEAMCITY_VERSION: ${TEAMCITY_VERSION}
     privileged: true
     volumes:
       - ./volumes/data/teamcity_agent/conf/agent3:/data/teamcity_agent/conf
+      - ./volumes/root/.ssh:/root/.ssh
     environment:
       - DOCKER_IN_DOCKER=start
     depends_on:

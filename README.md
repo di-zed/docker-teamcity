@@ -27,7 +27,19 @@ https://docs.docker.com/compose/install/
     ```text
     127.0.0.1 teamcity.loc
     ```
-7. If everything is done correctly, then after starting Docker, the project will be available via the link http://localhost:8111/.
+7. **Optional.** If you get error about permission problems, please do:
+   ```shell
+   sudo chown -R 1000:1000 ./volumes/data/teamcity_server/datadir
+   sudo chown -R 1000:1000 ./volumes/opt/teamcity/logs
+   make docker-restart
+   ```
+8. If everything is done correctly, then after starting Docker, the project will be available via the link http://localhost:8111/. Please proceed and continue with setup.
+9. Database connection setup.
+   1. Select MySQL database type.
+   2. Download JDBC driver for MySQL database type and put it into the *./volumes/data/teamcity_server/datadir/lib/jdbc*.
+      1. For example, the file can be downloaded here: https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/.
+      2. The file name: [mysql-connector-java-8.0.30.jar](https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar).
+   3. Create an empty database.
 
 ## Process
 

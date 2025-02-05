@@ -5,5 +5,6 @@ volumes/data/teamcity_agent/conf/agent2/buildAgent.properties
 volumes/data/teamcity_agent/conf/agent3/buildAgent.properties
 volumes/data/teamcity_server/datadir/*
 volumes/opt/teamcity/logs/*
+volumes/root/.ssh/*
 volumes/var/lib/mysql/*
 !.gitkeep

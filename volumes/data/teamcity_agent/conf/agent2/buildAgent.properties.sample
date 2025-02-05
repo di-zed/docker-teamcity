@@ -1,4 +1,4 @@
-name=Agent 2
+name=Build Agent 02
 ownPort=9090
 serverUrl=http\://teamcity\:8111
 
