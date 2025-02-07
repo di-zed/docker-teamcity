@@ -1,5 +1,11 @@
 # CHANGE LOG
 
+## [1.0.2] - 2025-02-07
+
+### Fixed
+
+- Permissions for Build Agents.
+
 ## [1.0.1] - 2025-02-05
 
 ### Added
