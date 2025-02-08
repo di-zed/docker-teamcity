@@ -4,10 +4,10 @@ volumes/data/teamcity_agent/conf/agent1/buildAgent.properties
 volumes/data/teamcity_agent/conf/agent2/buildAgent.properties
 volumes/data/teamcity_agent/conf/agent3/buildAgent.properties
 volumes/data/teamcity_server/datadir/*
+volumes/home/buildagent/.ssh/*
 volumes/opt/buildagent_1/logs/*
 volumes/opt/buildagent_2/logs/*
 volumes/opt/buildagent_3/logs/*
 volumes/opt/teamcity/logs/*
-volumes/root/.ssh/*
 volumes/var/lib/mysql/*
 !.gitkeep

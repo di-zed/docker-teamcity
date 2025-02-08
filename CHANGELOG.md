@@ -6,6 +6,10 @@
 
 - Logs for Build Agents.
 
+### Changed
+
+- SSH Key path for the Build Agent.
+
 ## [1.0.2] - 2025-02-07
 
 ### Fixed
