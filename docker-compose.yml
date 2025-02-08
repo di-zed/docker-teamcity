@@ -41,6 +41,7 @@ services:
     privileged: true
     volumes:
       - ./volumes/data/teamcity_agent/conf/agent1:/data/teamcity_agent/conf
+      - ./volumes/opt/buildagent_1/logs:/opt/buildagent/logs
       - ./volumes/root/.ssh:/root/.ssh
     environment:
       - DOCKER_IN_DOCKER=start
@@ -58,6 +59,7 @@ services:
     privileged: true
     volumes:
       - ./volumes/data/teamcity_agent/conf/agent2:/data/teamcity_agent/conf
+      - ./volumes/opt/buildagent_2/logs:/opt/buildagent/logs
       - ./volumes/root/.ssh:/root/.ssh
     environment:
       - DOCKER_IN_DOCKER=start
@@ -75,6 +77,7 @@ services:
     privileged: true
     volumes:
       - ./volumes/data/teamcity_agent/conf/agent3:/data/teamcity_agent/conf
+      - ./volumes/opt/buildagent_3/logs:/opt/buildagent/logs
       - ./volumes/root/.ssh:/root/.ssh
     environment:
       - DOCKER_IN_DOCKER=start

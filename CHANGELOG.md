@@ -1,5 +1,11 @@
 # CHANGE LOG
 
+## [1.0.3] - 2025-02-08
+
+### Added
+
+- Logs for Build Agents.
+
 ## [1.0.2] - 2025-02-07
 
 ### Fixed
