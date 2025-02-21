@@ -12,7 +12,10 @@ https://docs.docker.com/compose/install/
 2. **./volumes** The folder with Docker Volumes in Linux structure.
    1. **./volumes/data/teamcity_agent/conf/** Configuration files for agents.
    2. **./volumes/data/teamcity_server/datadir/** Server data dir.
-   3. **./volumes/opt/teamcity/logs/** TeamCity log files.
+   3. **./volumes/opt/buildagent_1/logs/** Build Agent 01 log files.
+   4. **./volumes/opt/buildagent_2/logs/** Build Agent 02 log files.
+   5. **./volumes/opt/buildagent_3/logs/** Build Agent 03 log files.
+   6. **./volumes/opt/teamcity/logs/** TeamCity log files.
 
 ## Setup
 

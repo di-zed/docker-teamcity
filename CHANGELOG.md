@@ -1,5 +1,11 @@
 # CHANGE LOG
 
+## [1.0.4] - 2025-02-21
+
+### Added
+
+- Node/NPM and Composer for Build Agents.
+
 ## [1.0.3] - 2025-02-08
 
 ### Added
