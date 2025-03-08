@@ -1,5 +1,11 @@
 # CHANGE LOG
 
+## [1.0.5] - 2025-03-08
+
+### Added
+
+- TeamCity backup functionality.
+
 ## [1.0.4] - 2025-02-21
 
 ### Added

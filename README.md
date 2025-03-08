@@ -43,6 +43,10 @@ https://docs.docker.com/compose/install/
       1. For example, the file can be downloaded here: https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/.
       2. The file name: [mysql-connector-java-8.0.30.jar](https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar).
    3. Create an empty database.
+10. After installation, when you first log in, it is recommended to change the Key.
+    1. Login to TeamCity.
+    2. Admin => Server Administration => Global Settings => Encryption Settings.
+    3. Check the **Use custom encryption key** box, set the **Custom encryption key**, and save settings. It is recommended to remember this key somehow.
 
 ## Process
 
@@ -104,3 +108,22 @@ make docker-local-restart
 
 - Host: teamcity-agent-3
 - Config file: *./volumes/data/teamcity_agent/conf/agent3/buildAgent.properties*
+
+## TeamCity Backup
+
+[Creating Backup via maintainDB command-line tool.](https://www.jetbrains.com/help/teamcity/creating-backup-via-maintaindb-command-line-tool.html)
+
+There is a script ([tc-backup.sh](https://github.com/di-zed/docker-teamcity/blob/main/tc-backup.sh)) in the project root that can help you backup your project settings.
+It can be executed when Docker is running.
+
+```shell
+bash tc-backup.sh
+```
+
+**ATTENTION!** The scenario for this script was developed independently. It cannot 100% guarantee that it does not contain sensitive data!
+
+As a result of executing the script, two arrays will appear in the root of the project:
+- TeamCity_Backup_\*_\*_sanitized.zip (basic backup without sensitive data)
+- TeamCity_Backup_\*_\*_sensitive.zip (very sensitive data, better to store separately from backup)
+
+[Restoring TeamCity Data from Backup.](https://www.jetbrains.com/help/teamcity/restoring-teamcity-data-from-backup.html)

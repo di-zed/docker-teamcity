@@ -1,4 +1,5 @@
 .env
+.idea
 docker-compose.local.yml
 volumes/data/teamcity_agent/conf/agent1/buildAgent.properties
 volumes/data/teamcity_agent/conf/agent2/buildAgent.properties
