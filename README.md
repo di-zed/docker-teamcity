@@ -43,7 +43,7 @@ https://docs.docker.com/compose/install/
       1. For example, the file can be downloaded here: https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/.
       2. The file name: [mysql-connector-java-8.0.30.jar](https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar).
    3. Create an empty database.
-10. After installation, when you first log in, it is recommended to change the Key.
+10. After installation, when you first log in, it is recommended to change the Encryption Key.
     1. Login to TeamCity.
     2. Admin => Server Administration => Global Settings => Encryption Settings.
     3. Check the **Use custom encryption key** box, set the **Custom encryption key**, and save settings. It is recommended to remember this key somehow.
